@@ -32,3 +32,8 @@
     padding: 9.3775rem 0;
     position: relative;
 }
+
+.section-book{
+    padding: 150px 0;
+    @include lg(to right bottom, $color-primary-light, $color-primary-dark)
+}

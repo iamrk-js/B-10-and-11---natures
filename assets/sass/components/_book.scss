@@ -1,0 +1,103 @@
+.book{
+    // height: 25rem;
+    background-image: 
+    linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%),
+    url(../images/nat-10.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 3px;
+    box-shadow: 0 1rem 2.5rem rgba($color-dark, .2);
+
+
+
+}
+
+.book-form{
+    padding: 60px 40px;
+
+    
+}
+
+.form{
+    &-group{
+        margin-bottom: 1.5rem;
+    }
+
+    &-control{ // .form-control 
+        display: block;
+        width: 90%;
+        padding: 1rem 1.25rem;
+        border-radius: 2px;
+        border: none;
+        color: inherit;
+        font-size: inherit;
+        outline: none;
+        border-bottom: 3px solid transparent;
+        &:focus{
+            border-bottom: 3px solid yellowgreen;
+        }
+
+        &:focus:invalid{
+            border-bottom: 3px solid red;
+        }
+
+
+
+
+        &::placeholder{ // .form-control::placeholder
+            color: $color-grey-light-2 ;
+        }
+
+        & + label{
+            padding: 7px 0 0 20px;
+            display: block;
+            transition: all .4s ease-in-out;
+            opacity: 1;
+        }
+
+
+    }
+
+    &-control:placeholder-shown + label{
+        transform: translateY(-48px);
+        visibility: hidden;
+        opacity: 0; 
+    }
+    &-radio-control{
+        display: none;
+    }
+    &-radio-label{
+        position: relative;
+        padding-left: 2.5rem;
+    }
+    &-radio-btn {
+        width: 2rem;
+        height: 2rem;
+        border: 5px solid $color-primary;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: -4px;
+        &::after {
+            content: '';
+            width: 1rem;
+            height: 1rem;
+            display: inline-block;
+            background-color: $color-primary;
+            border-radius: 50%;
+            top: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+        }
+    }
+
+
+    &-radio-control:checked ~ &-radio-label > &-radio-btn::after { // .form-radio-control
+        opacity: 1;
+    }
+    
+}
